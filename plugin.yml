@@ -1,0 +1,28 @@
+# $HOME/.k9s/plugin.yml
+plugin:
+  ###
+  # List GKE clusters in a project and fetch their credentials.
+  ###
+  gke-credentials:
+    shortCut: Ctrl-L
+    confirm: false
+    description: Get GKE Cluster Credentials
+    scopes:
+      - contexts
+    command: k9s-gke-creds.sh
+    args:
+      - -p
+    background: false
+  ###
+  # Deletes a cluster context using kubectx
+  ###
+  delete-ctx:
+    shortCut: Ctrl-D
+    confirm: true
+    description: Delete context
+    scopes:
+      - contexts
+    command: kubectx
+    args:
+      - -d
+      - $NAME
